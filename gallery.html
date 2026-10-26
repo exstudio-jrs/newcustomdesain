@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Galeri - SportCraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 font-bold text-lg text-slate-800">
+                    <span class="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center font-black">SC</span>
+                    SportCraft Studio
+                </div>
+                <nav class="flex gap-1">
+                    <a href="dashboard.html" class="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-lg">Dashboard</a>
+                    <a href="gallery.html" class="px-3 py-2 text-sm font-semibold text-blue-600 bg-blue-50 rounded-lg">Katalog Galeri</a>
+                </nav>
+            </div>
+            
+            <div id="headerUserInfo"></div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h1 class="text-3xl font-bold text-slate-900">Katalog Desain Custom Jersey</h1>
+            <p class="text-slate-500 text-sm mt-2">Kumpulan hasil render desain kaos & baju olahraga yang telah dikerjakan oleh tim desainer.</p>
+            
+            <!-- Category Filter Buttons -->
+            <div class="flex justify-center gap-2 mt-6 flex-wrap">
+                <button onclick="filterGallery('ALL')" class="gallery-filter-btn px-4 py-2 bg-blue-600 text-white rounded-xl text-xs font-semibold">Semua</button>
+                <button onclick="filterGallery('football')" class="gallery-filter-btn px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-xl text-xs font-semibold">Sepakbola</button>
+                <button onclick="filterGallery('basketball')" class="gallery-filter-btn px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-xl text-xs font-semibold">Basket</button>
+                <button onclick="filterGallery('volleyball')" class="gallery-filter-btn px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-xl text-xs font-semibold">Voli</button>
+                <button onclick="filterGallery('running')" class="gallery-filter-btn px-4 py-2 bg-white text-slate-600 border border-slate-200 rounded-xl text-xs font-semibold">Running</button>
+            </div>
+        </div>
+
+        <!-- Grid Cards Galeri -->
+        <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Rendered by gallery.js -->
+        </div>
+    </main>
+
+    <!-- Modal Lightbox Preview -->
+    <div id="galleryLightbox" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl modal-box flex flex-col md:flex-row max-h-[90vh]">
+            <div class="md:w-1/2 bg-slate-900 flex items-center justify-center p-4">
+                <img id="lightboxImg" class="max-h-80 md:max-h-full object-contain rounded-lg">
+            </div>
+            <div class="md:w-1/2 p-6 flex flex-col justify-between overflow-y-auto">
+                <div>
+                    <h3 id="lightboxTitle" class="text-xl font-bold text-slate-800"></h3>
+                    <p class="text-xs text-slate-500 mt-1">Client: <span id="lightboxClient" class="font-medium text-slate-700"></span></p>
+
+                    <div class="mt-4 space-y-2 text-xs">
+                        <div class="flex justify-between border-b pb-1">
+                            <span class="text-slate-500">Desainer:</span>
+                            <span id="lightboxDesigner" class="font-semibold text-purple-600"></span>
+                        </div>
+                        <div class="flex justify-between border-b pb-1">
+                            <span class="text-slate-500">Bahan:</span>
+                            <span id="lightboxFabric" class="font-medium"></span>
+                        </div>
+                        <div class="flex justify-between border-b pb-1">
+                            <span class="text-slate-500">Kerah:</span>
+                            <span id="lightboxCollar" class="font-medium"></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <p class="text-xs font-semibold text-slate-500 mb-1">Catatan Spesifikasi:</p>
+                        <p id="lightboxNotes" class="text-xs bg-slate-50 p-3 rounded-xl border text-slate-600"></p>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-right">
+                    <button onclick="closeGalleryLightbox()" class="px-5 py-2 bg-slate-800 text-white rounded-xl text-xs font-semibold">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Shared -->
+    <script src="js/app-data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

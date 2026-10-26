@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SportCraft Custom Sportswear</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen bg-slate-900 flex items-center justify-center p-4">
+
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 border border-slate-100">
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-600 text-white font-black text-2xl rounded-2xl mb-3 shadow-lg shadow-blue-500/30">
+                SC
+            </div>
+            <h1 class="text-2xl font-bold text-slate-800">SportCraft Studio</h1>
+            <p class="text-xs text-slate-500 mt-1">Sistem Management Custom Desain Baju Olahraga</p>
+        </div>
+
+        <!-- Form Login -->
+        <form id="loginForm" class="space-y-5">
+            <div>
+                <label class="block text-xs font-semibold text-slate-600 uppercase mb-2">Username</label>
+                <input type="text" id="usernameInput" required placeholder="Masukkan username" class="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-slate-600 uppercase mb-2">Password</label>
+                <input type="password" id="passwordInput" required placeholder="••••••••" class="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button type="submit" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl text-sm shadow-lg shadow-blue-500/20 transition-all">
+                Masuk ke Dashboard
+            </button>
+        </form>
+
+        <!-- Demo Quick Login Buttons -->
+        <div class="mt-8 pt-6 border-t border-slate-100">
+            <p class="text-xs text-center font-semibold text-slate-400 mb-3 uppercase">Akses Cepat Testing (Quick Login)</p>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+                <button onclick="quickLogin('marketing1', 'passmarketing1')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg text-left">
+                    <div class="font-bold">Marketing 1</div>
+                    <div class="text-[10px] opacity-75">Budi</div>
+                </button>
+                <button onclick="quickLogin('marketing2', 'passmarketing2')" class="p-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg text-left">
+                    <div class="font-bold">Marketing 2</div>
+                    <div class="text-[10px] opacity-75">Siti</div>
+                </button>
+                <button onclick="quickLogin('designer1', 'passdesigner1')" class="p-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-left">
+                    <div class="font-bold">Desainer 1</div>
+                    <div class="text-[10px] opacity-75">Rian</div>
+                </button>
+                <button onclick="quickLogin('designer2', 'passdesigner2')" class="p-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-lg text-left">
+                    <div class="font-bold">Desainer 2</div>
+                    <div class="text-[10px] opacity-75">Dewi</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Shared -->
+    <script src="js/app-data.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
